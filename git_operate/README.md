@@ -6,7 +6,7 @@ System Test: Windows 10
 
 ## command batch file
 archive.bat    save git folder <br>
-sample:
+sample:<br>
 `
 "C:\\Program Files\\Git\\bin\\sh.exe" --login -i -c "git archive --format zip -o $(git log --date=short --pretty=format:"%ad-%h-master" -1).zip master"
 `
