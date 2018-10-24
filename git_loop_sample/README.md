@@ -4,7 +4,7 @@
 the start a loop for git-push and pull.
 
 command Line: start.bat [START_NUM] [LOOP_NUM] [ACTION] [LOG_FILE] <br>
-parameter:<br>
+argument:<br>
     START_NUM Indicate Start steps<br>
     LOOP_NUM  Indicate loops number.<br>
     ACTION    means the active : gitclone, gitpull, etc.<br>
