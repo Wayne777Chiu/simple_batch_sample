@@ -10,7 +10,7 @@ REM %1->START_NUM, %2->LOOP_NUM, %3->ACTION, %4->LOG_FILE
 
 SET /a START_NUM=0
 SET /a LOOP_NUM=2
-SET ACTION=gitpull
+SET ACTION=gitclone
 SET LOG_FILE=log.txt
 
 if %LOG_FILE%a==a goto nolog
