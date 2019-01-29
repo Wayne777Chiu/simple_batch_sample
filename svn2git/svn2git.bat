@@ -4,6 +4,7 @@ echo Create Folder for SVN
 
 SET HOST_PORT=1111
 SET LOCALHOST=localhost
+SET TARGET_FORDER=trunk
 mkdir repo
 
 :goto_repository
@@ -38,7 +39,7 @@ start svn_server.bat %CURRENT_PATH%\\%SVN_PATH%
 
 echo translate svn project to git project
 echo open git script terminal.
-"%GIT_HOME%\\%BASH_CMD%" --login -i -c "git.exe svn clone svn://%LOCALHOST%:%HOST_PORT% .//%GIT_UNIX_PATH% -T trunk -b branches -t tags"
+"%GIT_HOME%\\%BASH_CMD%" --login -i -c "git.exe svn clone svn://%LOCALHOST%:%HOST_PORT% .//%GIT_UNIX_PATH% -T %TARGET_FORDER% -b branches -t tags"
 goto success_exit
 
 :terminal_stop
