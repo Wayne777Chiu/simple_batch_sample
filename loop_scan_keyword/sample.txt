@@ -1,0 +1,23 @@
+/******************************************************************
+*
+*  Copyright(c) , Wayne  2020
+*
+*  Text Name: sample.txt   
+*
+*  Purpose : try to set loop scan for the code.
+*  Data    : 07/15/20
+*  Author  : Wayne
+*  Version  : 0.1
+*
+********************************************************************/
+#include "Sample.C"
+BYTE SampleID=0x58;
+char REV_Version_0='E';        
+BYTE REV_Version_1=0x00;        //Major version number
+BYTE REV_Version_2=0x03;        //Minor version number
+char REV_Version_3='R';        
+
+char   PRJ_NAME[8]={'X','R',' ','C','-','+','_','D'};
+char   UserVendor='O';         //O: Origin , X: checkother
+BYTE  VenderID =0x12;           //0x12: 1234 0x25:2567
+
