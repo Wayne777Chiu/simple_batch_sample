@@ -5,6 +5,7 @@ echo Create Folder for SVN
 SET HOST_PORT=1111
 SET LOCALHOST=localhost
 SET TARGET_FORDER=trunk
+rem SET TARGET_FORDER=trunk/SOMDDDD_A_XEOO
 mkdir repo
 
 :goto_repository
