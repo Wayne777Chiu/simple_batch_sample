@@ -20,4 +20,6 @@ char REV_Version_3='R';
 char   PRJ_NAME[8]={'X','R',' ','C','-','+','_','D'};
 char   UserVendor='O';         //O: Origin , X: checkother
 BYTE  VenderID =0x12;           //0x12: 1234 0x25:2567
+const char PRJ_NAME[8]={'X','C','5',' ','+','-','_','6'};
+// char   PRJ_NAME[8]={'X','R',' ','C','-','+','_','D'};
 

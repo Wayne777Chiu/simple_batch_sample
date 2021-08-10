@@ -1,4 +1,4 @@
-ECHO OFF
+ECHO ON
 @REM  =============================================================
 @REM    Get PRJ_NAME to parsing sample
 @REM  =============================================================
@@ -26,38 +26,21 @@ ECHO OFF
 @REM  TOEKN is same as upper descripton number, exception * character, it means the remain data in one line. (pass throught the data)
 @REM  DELTMS: the delimiter to cut off the string point. 
 
-
-
-FOR /F "EOL=/ TOKENS=1,2,3,4,5,6,7,8,9,10,11,12* DELIMS=',[}; " = %%I IN (sample.txt) DO IF %%J==PRJ_NAME @SET PRJ1_TEMP=%%L
-FOR /F "EOL=/ TOKENS=1,2,3,4,5,6,7,8,9,10,11,12* DELIMS=',[}; " = %%I IN (sample.txt) DO IF %%J==PRJ_NAME @SET PRJ2_TEMP=%%M
-FOR /F "EOL=/ TOKENS=1,2,3,4,5,6,7,8,9,10,11,12* DELIMS=',[}; " = %%I IN (sample.txt) DO IF %%J==PRJ_NAME @SET PRJ3_TEMP=%%N
-FOR /F "EOL=/ TOKENS=1,2,3,4,5,6,7,8,9,10,11,12* DELIMS=',[}; " = %%I IN (sample.txt) DO IF %%J==PRJ_NAME @SET PRJ4_TEMP=%%O
-FOR /F "EOL=/ TOKENS=1,2,3,4,5,6,7,8,9,10,11,12* DELIMS=',[}; " = %%I IN (sample.txt) DO IF %%J==PRJ_NAME @SET PRJ5_TEMP=%%P
-FOR /F "EOL=/ TOKENS=1,2,3,4,5,6,7,8,9,10,11,12* DELIMS=',[}; " = %%I IN (sample.txt) DO IF %%J==PRJ_NAME @SET PRJ6_TEMP=%%Q
-FOR /F "EOL=/ TOKENS=1,2,3,4,5,6,7,8,9,10,11,12* DELIMS=',[}; " = %%I IN (sample.txt) DO IF %%J==PRJ_NAME @SET PRJ7_TEMP=%%R
-FOR /F "EOL=/ TOKENS=1,2,3,4,5,6,7,8,9,10,11,12* DELIMS=',[}; " = %%I IN (sample.txt) DO IF %%J==PRJ_NAME @SET PRJ8_TEMP=%%S
-
-REM =============================================================
-REM   We drop the char '_' 
-REM =============================================================
-
-@REM ECHO %PRJ1_TEMP%
-@REM ECHO %PRJ2_TEMP%E
-@REM ECHO %PRJ3_TEMP%
-@REM ECHO %PRJ4_TEMP%
-@REM ECHO %PRJ5_TEMP%
-@REM ECHO %PRJ6_TEMP%
-@REM ECHO %PRJ7_TEMP%
-@REM ECHO %PRJ8_TEMP%
-
-IF %PRJ1_TEMP%a==_a SET PRJ1_TEMP=
-IF %PRJ2_TEMP%a==_a SET PRJ2_TEMP=
-IF %PRJ3_TEMP%a==_a SET PRJ3_TEMP=
-IF %PRJ4_TEMP%a==_a SET PRJ4_TEMP=
-IF %PRJ5_TEMP%a==_a SET PRJ5_TEMP=
-IF %PRJ6_TEMP%a==_a SET PRJ6_TEMP=
-IF %PRJ7_TEMP%a==_a SET PRJ7_TEMP=
-IF %PRJ8_TEMP%a==_a SET PRJ8_TEMP=
+@REM Find the line const char PRJ_NAME[8]={'X','C','5',' ','+','-','_','6'};
+FOR /F "EOL=/ TOKENS=1,2,3,4,5,6,7,8,9,10,11,12,13* DELIMS=',[}; " = %%I IN (sample.txt) DO (
+IF "%%K"=="PRJ_NAME" (
+@REM =============================================================
+@REM   The char '_' drop 
+@REM =============================================================
+IF "%%Na"=="_a" (SET PRJ1_TEMP=) ELSE (SET PRJ1_TEMP=%%N)
+IF "%%Oa"=="_a" (SET PRJ2_TEMP=) ELSE (SET PRJ2_TEMP=%%O)
+IF "%%Pa"=="_a" (SET PRJ3_TEMP=) ELSE (SET PRJ3_TEMP=%%P)
+IF "%%Qa"=="_a" (SET PRJ4_TEMP=) ELSE (SET PRJ4_TEMP=%%Q)
+IF "%%Ra"=="_a" (SET PRJ5_TEMP=) ELSE (SET PRJ5_TEMP=%%R)
+IF "%%Sa"=="_a" (SET PRJ6_TEMP=) ELSE (SET PRJ6_TEMP=%%S)
+IF "%%Ta"=="_a" (SET PRJ7_TEMP=) ELSE (SET PRJ7_TEMP=%%T)
+IF "%%Ua"=="_a" (SET PRJ8_TEMP=) ELSE (SET PRJ8_TEMP=%%U)
+))
 
 SET PRJECTNAME=%PRJ1_TEMP%%PRJ2_TEMP%%PRJ3_TEMP%%PRJ4_TEMP%%PRJ5_TEMP%%PRJ6_TEMP%%PRJ7_TEMP%%PRJ8_TEMP%
 ECHO %PRJECTNAME%
